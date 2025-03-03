@@ -115,7 +115,13 @@ class BoardController: NSObject,
   // Checkpoint: Correctly implementing this function should change the goal word each time the user inputs an entire row of letters
   private func applyIsAlienWordleSettings(with settings: [String: Any]) {
     // START YOUR CODE HERE
-    // ...
+      // Extract the value of kIsAlienWordleKey from settings
+          if let isAlien = settings[kIsAlienWordleKey] as? Bool {
+              // Assign the extracted value to the isAlienWordle property
+              isAlienWordle = isAlien
+          } else {
+              print("Error: Could not retrieve isAlienWordle setting from settings")
+          }
     // START YOUR CODE HERE
   }
 }
