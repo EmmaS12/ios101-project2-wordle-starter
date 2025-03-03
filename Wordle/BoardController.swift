@@ -62,7 +62,13 @@ class BoardController: NSObject,
   // Checkpoint: Correctly implementing this should allow you to change the number of letters in the goal word!
   private func applyNumLettersSettings(with settings: [String: Any]) {
     // START YOUR CODE HERE
-    // ...
+    // ...// Extract the value from the settings dictionary using the key
+      if let numLetters = settings[kNumLettersKey] as? Int {
+          // Assign the extracted value to numItemsPerRow
+          numItemsPerRow = numLetters
+      } else {
+          print("Error: Could not retrieve numLetters from settings")
+      }
     // END YOUR CODE HERE
   }
   
